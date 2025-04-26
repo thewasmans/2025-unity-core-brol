@@ -1,8 +1,8 @@
-public class BGSManager : BaseManager<GameManager>
+public class BGSManager : BaseManager<BGSGameManager>
 {
-    public GameManager GameManager;
-    
-    public override void Initialize(GameManager gameManager)
+    public BGSGameManager GameManager { get; private set; }
+
+    public override void Initialize(BGSGameManager gameManager)
     {
         GameManager = gameManager;
     }
