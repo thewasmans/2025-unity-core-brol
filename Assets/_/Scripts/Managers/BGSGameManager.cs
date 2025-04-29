@@ -6,6 +6,7 @@ public class BGSGameManager : BaseManager<GameData>
 {
     [field: SerializeField] public GameData GameData { get; private set; }
     [field: SerializeField] public GameState GameState { get; private set; }
+    [field: SerializeField, ReadOnly] public GameState GameState { get; private set; }
     [field: SerializeField] public BGSManager[] Managers { get; private set; }
     public Dictionary<Type, BGSManager> ManagersInstances { get; private set; } = new();
 
