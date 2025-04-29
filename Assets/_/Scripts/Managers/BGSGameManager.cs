@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
+using NaughtyAttributes;
 using UnityEngine;
 
 public class BGSGameManager : BaseManager<GameData>
 {
     [field: SerializeField] public GameData GameData { get; private set; }
-    [field: SerializeField] public GameState GameState { get; private set; }
     [field: SerializeField, ReadOnly] public GameState GameState { get; private set; }
     [field: SerializeField] public BGSManager[] Managers { get; private set; }
     public Dictionary<Type, BGSManager> ManagersInstances { get; private set; } = new();
@@ -20,7 +20,7 @@ public class BGSGameManager : BaseManager<GameData>
 
         ManagersInstances = GetInstanceManagers();
 
-        GameState = new GameState();
+        GameState = new GameState(this);
 
         foreach (var manager in Managers)
         {
