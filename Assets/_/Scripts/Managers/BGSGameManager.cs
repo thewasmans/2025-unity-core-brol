@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class BGSGameManager : BaseManager<GameData>
 {
-    public GameData GameData;
-    public GameState GameState;
-
+    [field: SerializeField] public GameData GameData { get; private set; }
+    [field: SerializeField] public GameState GameState { get; private set; }
     [field: SerializeField] public BGSManager[] Managers { get; private set; }
     public Dictionary<Type, BGSManager> ManagersInstances { get; private set; } = new();
 
@@ -19,6 +18,8 @@ public class BGSGameManager : BaseManager<GameData>
             throw new BGSException($"{nameof(BGSGameManager)} No {nameof(GameData)} refered. The {nameof(BGSGameManager)} need a {nameof(GameData)}");
 
         ManagersInstances = GetInstanceManagers();
+
+        GameState = new GameState();
 
         foreach (var manager in Managers)
         {
