@@ -455,7 +455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 541fcc226fa08b34f88204e89a2c7446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameData: {fileID: 11400000, guid: 639d26daf5141e941a10910f4c7247a2, type: 2}
+  <GameData>k__BackingField: {fileID: 11400000, guid: 639d26daf5141e941a10910f4c7247a2, type: 2}
   <Managers>k__BackingField: []
 --- !u!4 &1147280637
 Transform:
