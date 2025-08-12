@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.brol-game-studio.core": {
+      "version": "https://github.com/thewasmans/2025-unity-core-brol.git#package-test",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "5a2b908ee35d702a696f809a2909ab6b9765b1e3"
+    },
     "com.dbrizov.naughtyattributes": {
       "version": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
       "depth": 0,

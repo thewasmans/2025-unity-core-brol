@@ -4,7 +4,7 @@ using UnityEngine;
 public class TriggersManager : BGSManager
 {
     public TriggerCollision[] TriggersCollision { get; private set; }
-    public HashSet<Collider> ColliderRegistered { get; private set; } = new();
+    public HashSet<Collider> CollidersRegistered { get; private set; } = new();
 
     public override void Initialize(BGSGameManager gameManager)
     {
@@ -32,15 +32,15 @@ public class TriggersManager : BGSManager
 
     public void Register(Collider collider)
     {
-        ColliderRegistered.Add(collider);
+        CollidersRegistered.Add(collider);
     }
     public void Unregister(Collider collider)
     {
-        ColliderRegistered.Remove(collider);
+        CollidersRegistered.Remove(collider);
     }
 
     public bool IsRegistered(Collider collider)
     {
-        return ColliderRegistered.Contains(collider);
+        return CollidersRegistered.Contains(collider);
     }
 }
