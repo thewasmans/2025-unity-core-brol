@@ -1,10 +1,8 @@
 {
-    "name": "BGS.PackageName.Editor",
-    "rootNamespace": "BGS.PackageName.Editor",
+    "name": "BGS.Core",
+    "rootNamespace": "BGS.Core",
     "references": [],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

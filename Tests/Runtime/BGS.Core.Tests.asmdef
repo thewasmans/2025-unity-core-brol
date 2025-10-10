@@ -1,6 +1,6 @@
 {
-    "name": "BGS.PackageName.Tests",
-    "rootNamespace": "BGS.PackageName.Tests",
+    "name": "BGS.Core.Tests",
+    "rootNamespace": "BGS.Core.Tests",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

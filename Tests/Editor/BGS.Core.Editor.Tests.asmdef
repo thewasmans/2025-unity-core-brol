@@ -1,6 +1,6 @@
 {
-    "name": "BGS.PackageName.Editor.Tests",
-    "rootNamespace": "BGS.PackageName.Editor.Tests",
+    "name": "BGS.Core.Editor.Tests",
+    "rootNamespace": "BGS.Core.Editor.Tests",
     "references": [],
     "includePlatforms": [
         "Editor"
