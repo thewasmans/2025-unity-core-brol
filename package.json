@@ -1,0 +1,11 @@
+{
+    "name": "com.brol-game-studio.core",
+    "version": "0.0.0",
+    "displayName": "BGS - [Package Name]",
+    "description": "Description of the package.",
+    "author": {
+      "name": "The Wasmans",
+      "email": "thewasmans@gmail.com",
+      "url": "https://thewasmans.com"
+    }
+}
