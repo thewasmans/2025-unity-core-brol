@@ -3,6 +3,7 @@ where TGameManager : BGCBaseManager<TGameData>
 where TGameData : BGCGameData
 {
     public TGameManager GameManager { get; set; }
+    public TGameData GameData { get; set; }
 
     public override void Initialize(TGameManager gameManager)
     {
