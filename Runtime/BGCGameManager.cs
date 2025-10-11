@@ -6,7 +6,7 @@ public abstract class BGCGameManager<T> : BGCBaseManager<T> where T : BGCGameDat
 {
     [field: SerializeField] public T GameData { get; private set; }
     [field: SerializeField] public BGCBaseManager<BGCGameManager<T>>[] Managers { get; private set; }
-    public Dictionary<Type, BGCManager<BGCGameManager<T>, T>> _managersInstances { get; set; } = new();
+    public Dictionary<Type, BGCBaseManager<BGCGameManager<T>>> _managersInstances { get; set; } = new();
 
     public override void Initialize(T gameData)
     {
@@ -25,12 +25,12 @@ public abstract class BGCGameManager<T> : BGCBaseManager<T> where T : BGCGameDat
         }
     }
 
-    protected Dictionary<Type, BGCManager<BGCGameManager<T>, T>> RetrieveInstancesManager()
+    protected Dictionary<Type, BGCBaseManager<BGCGameManager<T>>> RetrieveInstancesManager()
     {
-        Dictionary<Type, BGCManager<BGCGameManager<T>, T>> instances = new();
+        Dictionary<Type, BGCBaseManager<BGCGameManager<T>>> instances = new();
         foreach (var manager in Managers)
         {
-            if (!instances.TryAdd(manager.GetType(), manager as BGCManager<BGCGameManager<T>, T>))
+            if (!instances.TryAdd(manager.GetType(), manager as BGCBaseManager<BGCGameManager<T>>))
             {
                 throw new BGCException($"[ {nameof(BGCGameManager<T>)} ] The {manager.GetType()} is referenced multiple times in {Managers} when it should only be referenced once");
             }
@@ -38,7 +38,7 @@ public abstract class BGCGameManager<T> : BGCBaseManager<T> where T : BGCGameDat
         return instances;
     }
 
-    public TManager GetManager<TManager>() where TManager : BGCManager<BGCGameManager<T>, T>
+    public TManager GetManager<TManager>() where TManager : BGCBaseManager<BGCGameManager<T>>
     {
         if (_managersInstances.TryGetValue(typeof(TManager), out var manager))
         {
